@@ -1,9 +1,9 @@
 class Node:    
-  def __init__(self,data):    
-    self.data = data;    
+  def __init__(self,Note):    
+    self.Note = Note;
     self.next = None;    
      
-class CreateList:    
+class CreateList:
   #Declaring head and tail pointer as null.    
   def __init__(self):    
     self.head = Node(None);    
@@ -11,51 +11,55 @@ class CreateList:
     self.head.next = self.tail;    
     self.tail.next = self.head;    
         
-  def add(self,data):    
+  def add(self,NoteString):    
     '''This function will add the new node at the end of the list.'''
-    newNode = Node(data);    
-    if self.head.data is None:    
-      #If list is empty, both head and tail would point to new node.    
-      self.head = newNode;    
-      self.tail = newNode;    
-      newNode.next = self.head;    
-    else:    
-      #tail will point to new node.    
-      self.tail.next = newNode;    
-      #New node will become new tail.    
-      self.tail = newNode;    
-      #Since, it is circular linked list tail will point to head.    
-      self.tail.next = self.head;    
-     
-  def display(self):    
-    '''Displays all the nodes in the list'''
-    current = self.head;    
-    if self.head is None:    
-      print("List is empty");    
-      return;    
-    else:    
-        print("Nodes of the circular linked list: ");    
-        #Prints each node by incrementing pointer.    
-        print(current.data),    
-        while(current.next != self.head):    
-            current = current.next;    
-            print(current.data),    
-     
-     
+    for Note in NoteString:
+
+        newNode = Node(Note);    
+        if self.head.Note is None:    
+          #If list is empty, both head and tail would point to new node.    
+          self.head = newNode;    
+          self.tail = newNode;    
+          newNode.next = self.head;    
+        else:    
+          self.tail.next = newNode;    
+          self.tail = newNode;    
+          self.tail.next = self.head;    
+         
+  def transpose(self,Note,num):
+      '''transposes chords up and down according to the num given'''
+      print(num)
+      try :
+          if num ==0:
+              _=2/num
+      except ZeroDivisionError:
+          print('Number cant be zero')
+          return(0)
+          
+      current = self.head;
+      while current.Note != Note:
+          current = current.next
+          print('reaching to the required note',current.Note)
+      print('reached')
+      if num>0:
+          while num:
+              current = current.next
+              num-=1
+      else :
+          num = 12+num
+          while num:
+              current = current.next
+              num-=1
+      print(current.Note)
+
+
+      
 class CircularLinkedList:    
   cl = CreateList();    
-  #Adds data to the list    
-  cl.add('C');    
-  cl.add('C#');    
-  cl.add('D');    
-  cl.add('D#');
-  cl.add('E');    
-  cl.add('F');    
-  cl.add('F#');    
-  cl.add('G');    
-  cl.add('G#');
-  cl.add('A');    
-  cl.add('A#');
-  cl.add('B');    
+  #Adds Notes to the list    
+  cl.add(['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'])
   #Displays all the nodes present in the list    
-  cl.display();    
+  
+  cl.transpose('F#',7)
+
+  
