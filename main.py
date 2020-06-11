@@ -1,4 +1,3 @@
-#Represents the node of list.    
 class Node:    
   def __init__(self,data):    
     self.data = data;    
@@ -28,8 +27,8 @@ class CreateList:
       #Since, it is circular linked list tail will point to head.    
       self.tail.next = self.head;    
      
-  #Displays all the nodes in the list    
   def display(self):    
+    '''Displays all the nodes in the list'''
     current = self.head;    
     if self.head is None:    
       print("List is empty");    
@@ -46,17 +45,17 @@ class CreateList:
 class CircularLinkedList:    
   cl = CreateList();    
   #Adds data to the list    
-  cl.add(C);    
-  cl.add(C#);    
-  cl.add(D);    
-  cl.add(D#);
-  cl.add(E);    
-  cl.add(F);    
-  cl.add(F#);    
-  cl.add(G);    
-  cl.add(G#);
-  cl.add(A);    
-  cl.add(A#);
-  cl.add(B);    
+  cl.add('C');    
+  cl.add('C#');    
+  cl.add('D');    
+  cl.add('D#');
+  cl.add('E');    
+  cl.add('F');    
+  cl.add('F#');    
+  cl.add('G');    
+  cl.add('G#');
+  cl.add('A');    
+  cl.add('A#');
+  cl.add('B');    
   #Displays all the nodes present in the list    
   cl.display();    
