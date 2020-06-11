@@ -3,7 +3,7 @@ class Node:
     self.Note = Note;
     self.next = None;    
      
-class CreateList:
+class NoteList:
   #Declaring head and tail pointer as null.    
   def __init__(self):    
     self.head = Node(None);    
@@ -14,7 +14,6 @@ class CreateList:
   def add(self,NoteString):    
     '''This function will add the new node at the end of the list.'''
     for Note in NoteString:
-
         newNode = Node(Note);    
         if self.head.Note is None:    
           #If list is empty, both head and tail would point to new node.    
@@ -55,7 +54,7 @@ class CreateList:
 
       
 class CircularLinkedList:    
-  cl = CreateList();    
+  cl = NoteList();    
   #Adds Notes to the list    
   cl.add(['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'])
   #Tranpose test
