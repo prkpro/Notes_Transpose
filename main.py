@@ -58,8 +58,7 @@ class CircularLinkedList:
   cl = CreateList();    
   #Adds Notes to the list    
   cl.add(['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'])
-  #Displays all the nodes present in the list    
-  
+  #Tranpose test
   cl.transpose('F#',7)
 
   
